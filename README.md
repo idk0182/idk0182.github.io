@@ -22,3 +22,4 @@
 Чтобы выделить текст как код, поместите его в тройные кавычки  .
 
 ```mkdir my_project cd my_project git init``` 
+[ссылка на число пи](https://idk0182.github.io/PI)
