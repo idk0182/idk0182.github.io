@@ -4,7 +4,7 @@
 - я поступать хочу на кибербез
 > Волк не тот, кто волк, а волк тот, кто волк
 
-[ссылка на число пи](https://idk0182.github.io/PI.html)
+[ссылка на число пи](https://idk0182.github.io/PI)
 
 ![Текст](https://avatars.mds.yandex.net/i?id=21128a7aac9aae3b5540cddb0c45183d6cfe2143-6212678-images-thumbs&n=13)
 
