@@ -44,7 +44,6 @@
         table.appendChild(row);
     }
 
-    // Функция для случайного объединения клеток
     function mergeCells(count, times) {
         for (let t = 0; t < times; t++) {
             let merged = false;
@@ -54,7 +53,6 @@
                 const startRow = Math.floor(Math.random() * (orientation ? rows : rows - count + 1));
                 const startCol = Math.floor(Math.random() * (orientation ? cols - count + 1 : cols));
 
-                // Проверка возможности объединения
                 let canMerge = true;
 
                 for (let k = 0; k < count; k++) {
@@ -80,7 +78,6 @@
         }
     }
 
-    // Объединение клеток согласно заданию
     mergeCells(2, 4); // 4 раза по 2 клетки
     mergeCells(3, 3); // 3 раза по 3 клетки
     mergeCells(4, 2); // 2 раза по 4 клетки
