@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Морской бой</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        td {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #000;
+            position: relative;
+        }
+        .ship {
+            background-color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Морской бой</h1>
+<table id="battlefield"></table>
+
+<script>
+    const rows = 9;
+    const cols = 9;
+    const table = document.getElementById('battlefield');
+
+    // Создание таблицы 9x9
+    for (let i = 0; i < rows; i++) {
+        const row = document.createElement('tr');
+        for (let j = 0; j < cols; j++) {
+            const cell = document.createElement('td');
+            row.appendChild(cell);
+        }
+        table.appendChild(row);
+    }
+
+    // Функция для случайного объединения клеток
+    function mergeCells(count, times) {
+        for (let t = 0; t < times; t++) {
+            let merged = false;
+
+            while (!merged) {
+                const orientation = Math.random() < 0.5; // true - горизонтально, false - вертикально
+                const startRow = Math.floor(Math.random() * (orientation ? rows : rows - count + 1));
+                const startCol = Math.floor(Math.random() * (orientation ? cols - count + 1 : cols));
+
+                // Проверка возможности объединения
+                let canMerge = true;
+
+                for (let k = 0; k < count; k++) {
+                    const cell = orientation ? table.rows[startRow].cells[startCol + k] : table.rows[startRow + k].cells[startCol];
+                    if (cell.classList.contains('ship')) {
+                        canMerge = false;
+                        break;
+                    }
+                }
+
+                if (canMerge) {
+                    for (let k = 0; k < count; k++) {
+                        const cell = orientation ? table.rows[startRow].cells[startCol + k] : table.rows[startRow + k].cells[startCol];
+                        cell.classList.add('ship');
+                        if (k > 0) {
+                            if (orientation) cell.colSpan = count; 
+                            else cell.rowSpan = count;
+                        }
+                    }
+                    merged = true;
+                }
+            }
+        }
+    }
+
+    // Объединение клеток согласно заданию
+    mergeCells(2, 4); // 4 раза по 2 клетки
+    mergeCells(3, 3); // 3 раза по 3 клетки
+    mergeCells(4, 2); // 2 раза по 4 клетки
+    mergeCells(5, 1); // 1 раз по 5 клеток
+
+</script>
+
+</body>
+</html>
