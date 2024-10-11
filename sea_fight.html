@@ -7,82 +7,80 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
         }
         table {
             border-collapse: collapse;
-            margin: 20px auto;
         }
         td {
             width: 40px;
             height: 40px;
             border: 1px solid #000;
-            position: relative;
+            text-align: center;
+            vertical-align: middle;
         }
-        .ship {
-            background-color: #007BFF;
+        .ship-4 {
+            background-color: #007bff;
+            /* объединение ячеек по 4 */
+        }
+        .ship-3 {
+            background-color: #28a745;
+            /* объединение ячеек по 3 */
+        }
+        .ship-2 {
+            background-color: #ffc107;
+            /* объединение ячеек по 2 */
+        }
+        .ship-1 {
+            background-color: #dc3545;
+            /* одиночная ячейка */
         }
     </style>
 </head>
 <body>
+    <table>
+        <tr>
+            <td colspan="4" class="ship-4">Корабль 4</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="3" class="ship-3">Корабль 3</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="ship-2">Корабль 2</td>
+            <td class="ship-2">Корабль 2</td>
+            <td></td>
+            <td></td>
+            <td class="ship-1">Корабль 1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="3" class="ship-3">Корабль 3</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
 
-<h1>Морской бой</h1>
-<table id="battlefield"></table>
-
-<script>
-    const rows = 9;
-    const cols = 9;
-    const table = document.getElementById('battlefield');
-
-    for (let i = 0; i < rows; i++) {
-        const row = document.createElement('tr');
-        for (let j = 0; j < cols; j++) {
-            const cell = document.createElement('td');
-            row.appendChild(cell);
-        }
-        table.appendChild(row);
-    }
-
-    function mergeCells(count, times) {
-        for (let t = 0; t < times; t++) {
-            let merged = false;
-
-            while (!merged) {
-                const orientation = Math.random() < 0.5; // true - горизонтально, false - вертикально
-                const startRow = Math.floor(Math.random() * (orientation ? rows : rows - count + 1));
-                const startCol = Math.floor(Math.random() * (orientation ? cols - count + 1 : cols));
-
-                let canMerge = true;
-
-                for (let k = 0; k < count; k++) {
-                    const cell = orientation ? table.rows[startRow].cells[startCol + k] : table.rows[startRow + k].cells[startCol];
-                    if (cell.classList.contains('ship')) {
-                        canMerge = false;
-                        break;
-                    }
-                }
-
-                if (canMerge) {
-                    for (let k = 0; k < count; k++) {
-                        const cell = orientation ? table.rows[startRow].cells[startCol + k] : table.rows[startRow + k].cells[startCol];
-                        cell.classList.add('ship');
-                        if (k > 0) {
-                            if (orientation) cell.colSpan = count; 
-                            else cell.rowSpan = count;
-                        }
-                    }
-                    merged = true;
-                }
-            }
-        }
-    }
-
-    mergeCells(2, 4); // 4 раза по 2 клетки
-    mergeCells(3, 3); // 3 раза по 3 клетки
-    mergeCells(4, 2); // 2 раза по 4 клетки
-    mergeCells(5, 1); // 1 раз по 5 клеток
-
-</script>
 
 </body>
 </html>
