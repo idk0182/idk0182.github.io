@@ -6,7 +6,7 @@
     <title>Морской бой</title>
     <style>
         body {
-            background-color: darkblue;
+	    background-color: grey;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -17,16 +17,20 @@
         }
         h1 {
             margin-bottom: 20px;
-            color: green;
         }
         table {
             border-collapse: collapse;
         }
         td {
-            color: white;
+	    bgcolor: white;
             width: 40px;
             height: 40px;
             border: 1px solid #000;
+        }
+        .five { background-color: #ff9999; } /* Цвет для 5 ячеек */
+        .four { background-color: #99ccff; } /* Цвет для 4 ячеек */
+        .three { background-color: #99ff99; } /* Цвет для 3 ячеек */
+        .two { background-color: #ffff99; } /* Цвет для 2 ячеек */
     </style>
 </head>
 <body>
@@ -35,31 +39,31 @@
 
 <table>
     <tr>
-        <td rowspan='5' style='color: purple;'></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        <td rowspan='5' bgcolor='purple'></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
     </tr>
     <tr>
-        <td></td><td></td><td></td><td colspan='4' style='color: red;'></td><td></td>
-    </tr>
-    <tr>
-        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-    </tr>
-    <tr>
-        <td></td><td colspan='3' style='color: green;'></td><td></td><td colspan='3' style='color: green;'></td>
+        <td></td><td></td><td></td><td colspan='4' bgcolor='red'></td><td></td>
     </tr>
     <tr>
         <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
     </tr>
     <tr>
-        <td></td><td></td><td></td><td rowspan='2' style='color: blue;'></td><td></td><td></td><td></td><td colspan='2' style='color: blue;'></td>
+        <td></td><td colspan='3' bgcolor='green'></td><td></td><td colspan='3' bgcolor='green'></td>
     </tr>
     <tr>
-        <td colspan='3' style='color: green;'></td><td></td><td></td><td></td><td></td><td></td>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
     </tr>
     <tr>
-        <td></td><td></td><td></td><td></td><td></td><td rowspan='2' style='color: blue;'></td><td></td><td colspan='2' style='color: blue;'></td>
+        <td></td><td></td><td></td><td rowspan='2' bgcolor='blue'></td><td></td><td></td><td></td><td colspan='2' bgcolor='blue'></td>
     </tr>
     <tr>
-        <td colspan='4' style='color: red;'></td><td></td><td></td><td></td><td></td>
+        <td colspan='3' bgcolor='green'></td><td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <td></td><td></td><td></td><td></td><td></td><td rowspan='2' bgcolor='blue'></td><td></td><td colspan='2' bgcolor='blue'></td>
+    </tr>
+    <tr>
+        <td colspan='4' bgcolor='red'></td><td></td><td></td><td></td><td></td>
     </tr>
 
 </table>
