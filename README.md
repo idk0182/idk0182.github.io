@@ -1,6 +1,6 @@
-[ссылка на ABOUT.md](https://idk0182.github.io/ABOUT_md.md)
+[ссылка на ABOUT_md.md](https://idk0182.github.io/ABOUT_md.md)
 
-[ссылка на about.html](https://idk0182.github.io/ABOUT_html.html)
+[ссылка на ABOUT_html.html](https://idk0182.github.io/ABOUT_html.html)
 
 [ссылка на battleship.html](https://idk0182.github.io/battleship.html)
 
