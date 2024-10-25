@@ -4,4 +4,4 @@
 
 [ссылка на battleship.html](https://idk0182.github.io/battleship.html)
 
-[ссылка на task4](https://idk0182.github.io/task4.md)
+[ссылка на TASK4](https://idk0182.github.io/TASK4.md)
