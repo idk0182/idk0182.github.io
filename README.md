@@ -5,3 +5,5 @@
 [ссылка на battleship.html](https://idk0182.github.io/battleship.html)
 
 [ссылка на TASK4](https://idk0182.github.io/TASK4.md)
+
+[Ссылка на MODELS.md](https://idk0182.github.io/MODELS.md)
